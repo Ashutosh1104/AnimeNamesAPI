@@ -2,7 +2,7 @@
   "name": "animeapi",
   "version": "1.0.0",
   "description": "An Api working based on Scrapper and small names database which is updated every two days by itself to add any new anime added to it",
-  "main": "index.js",
+  "main": "app.js",
   "directories": {
     "lib": "lib"
   },
@@ -19,6 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "AshutoshSingh",
