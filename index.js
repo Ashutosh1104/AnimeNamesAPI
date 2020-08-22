@@ -1,8 +1,9 @@
+//require('dotenv').config()
 const express= require('express')
 const app = express();
-const pool = require('./db');
-var {makingDb} = require('./lib/makingDb');
-const anime = require('./lib/anime');
+//const pool = require('./db');
+//var {makingDb} = require('./lib/makingDb');
+//const anime = require('./lib/anime');
 
 app.use(express.json());
 // Routes 
@@ -43,18 +44,23 @@ app.use(express.json());
 // }).catch(err=> console.log(err))
 
 
+app.get("/" , function(req,res){
+    res.send("Hello World");
+})
 app.get('/forSearch',async function(req,res){
-    try {
-        const newAnime= await pool.query(
-        "select array_agg(row_to_json(anime)) from ( select name, altname , nameLink from anime) anime;"
-        )
-        res.send(newAnime.rows)
-    } catch (err) {
-        console.log(err)
-    }
+    // try {
+    //     console.log('woah')
+    //     const newAnime= await pool.query(
+    //     "select array_agg(row_to_json(anime)) from ( select name, altname , nameLink from anime) anime;"
+    //     )
+    //     res.send(newAnime.rows)
+    // } catch (err) {
+    //     console.log(err)
+    // }
+    res.send("yet not complete");
 })
 
-app.listen('8000',function(){
+app.listen( process.env,PORT || 8000 , function(){
     console.log('server started on 8000');
 })
 
