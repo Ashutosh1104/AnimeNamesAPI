@@ -60,7 +60,7 @@ app.get('/forSearch',async function(req,res){
     res.send("yet not complete");
 })
 
-app.listen( process.env,PORT || 8000 , function(){
+app.listen( process.env.PORT || 8000 , function(){
     console.log('server started on 8000');
 })
 
