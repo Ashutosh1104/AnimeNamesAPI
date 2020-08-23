@@ -9,7 +9,7 @@ runDBupdate();
 setInterval( runDBupdate , 48*60*60*1000) // running update every 24 hrs
 
 app.get("/" , function(req,res){
-    res.send("Hello World");
+    res.send('hey User There are two functions working as of now  /anime/all to get entire list of anime and /anime/serahc/name to get anime with name in the names');
 })
 
 app.use('/anime', require('./routes/anime'));
