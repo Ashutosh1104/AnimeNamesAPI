@@ -1,26 +1,45 @@
 {
   "name": "animeapi",
   "version": "1.0.0",
-  "description": "An Api working based on Scrapper and small names database which is updated every two days by itself to add any new anime added to it",
+  "description": "Simple api for english to japanese name of anime",
   "main": "app.js",
   "directories": {
     "lib": "lib"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "i": "^0.3.6",
-    "nodemon": "^2.0.4",
     "npm": "^6.14.7",
+    "pg": "^8.3.2",
+    "pg-hstore": "^2.3.3",
     "pg-pool": "^3.2.1",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "sequelize": "^6.3.4",
+    "sequelize-cli": "^6.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
   "scripts": {
     "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashutosh1104/AnimeAPI.git"
+  },
+  "keywords": [
+    "Anime",
+    "Api"
+  ],
   "author": "AshutoshSingh",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ashutosh1104/AnimeAPI/issues"
+  },
+  "homepage": "https://github.com/Ashutosh1104/AnimeAPI#readme"
 }

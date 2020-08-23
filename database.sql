@@ -1,4 +1,4 @@
-CREATE DATABASE animesql;
+CREATE DATABASE animes;
 
 CREATE TABLE anime(
     name VARCHAR ( 200 ) UNIQUE NOT NULL,
