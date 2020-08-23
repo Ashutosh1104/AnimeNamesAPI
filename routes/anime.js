@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../config/database');
-const Anime = require('../models/Anime');
+const Anime = require('../models/anime');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 

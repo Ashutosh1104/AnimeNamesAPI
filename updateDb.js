@@ -1,6 +1,6 @@
 const { WSAEHOSTUNREACH } = require('constants');
 var {makingDb} = require('./lib/makingDb');
-const anime = require('./models/Anime');
+const anime = require('./models/anime');
 
 const runDBupdate = async () => {
     const allPromise = await makingDb()

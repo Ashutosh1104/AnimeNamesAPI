@@ -1,8 +1,6 @@
 const express= require('express')
 const app = express();
-const database = require('./config/database')
 var {runDBupdate} = require('./updateDb');
-const anime = require('./lib/anime');
 app.use(express.urlencoded({ extended: false }));
 
 const PORT = process.env.PORT || 8000 ;
