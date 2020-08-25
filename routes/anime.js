@@ -44,6 +44,10 @@ router.get('/SpecificSearch/:name', (req, res) => {
         {altName: term}
       ]
     },
+    order: [
+      ['rating', 'DESC'],
+      ['episodes', 'DESC'],
+    ],
     attributes: ['name', 'altName','nameLink'],
   }).then(Animes => res.send(Animes[0]))
   .catch(err => {
