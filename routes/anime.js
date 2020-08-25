@@ -12,7 +12,7 @@ router.get('/all', (req, res) =>
     .catch(err => console.log(err) ));
 
 // Search for Animes
-router.get('/search/:name', (req, res) => {
+router.get('/GeneralSearch/:name', (req, res) => {
   let term = req.params.name;
   term = term.toLowerCase();
   Anime.findAll({
@@ -30,6 +30,25 @@ router.get('/search/:name', (req, res) => {
   .catch(err => {
     console.log(err)
     res.send('plz write name in better method')
+  });
+  // Anime.findAll({ where: { name : { [Op.like]: '%' + term + '%' } } })
+});
+
+router.get('/SpecificSearch/:name', (req, res) => {
+  let term = req.params.name;
+  term = term.toLowerCase();
+  Anime.findAll({
+    where: {
+      [Op.or]: [
+        {name: term}, 
+        {altName: term}
+      ]
+    },
+    attributes: ['name', 'altName','nameLink'],
+  }).then(Animes => res.send(Animes[0]))
+  .catch(err => {
+    console.log(err)
+    res.send('plz write full name')
   });
   // Anime.findAll({ where: { name : { [Op.like]: '%' + term + '%' } } })
 });
