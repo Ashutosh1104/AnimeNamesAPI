@@ -41,7 +41,7 @@ it gives all the anime whose names or laternative names contain the passed varia
     .   
 ]
 
-https://anime2211.herokuapp.com/anime/GeneralSearch/naruto : // Naruto can be replaced by any full anime name ( FULL NAME PLEASE ) 
+https://anime2211.herokuapp.com/anime/SpecificSearch/naruto : // Naruto can be replaced by any full anime name ( FULL NAME PLEASE ) 
 it takes exact name and gives one answer
 
 {
