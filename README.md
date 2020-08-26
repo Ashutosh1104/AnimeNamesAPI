@@ -22,7 +22,7 @@ this returns a list of every anime in the Database with other details which are 
     tags : "Action , Adventure , Dra… Manga , Domestic Abuse" // seperated by commas 
 }
 
-https://anime2211.herokuapp.com/anime/GeneralSearch/:variable :
+https://anime2211.herokuapp.com/anime/GeneralSearch/naruto : // Naruto can be replaced by any word 
 it gives all the anime whose names or laternative names contain the passed variable == string 
 
 [
@@ -41,7 +41,7 @@ it gives all the anime whose names or laternative names contain the passed varia
     .   
 ]
 
-https://anime2211.herokuapp.com/anime/GeneralSearch/:name
+https://anime2211.herokuapp.com/anime/GeneralSearch/naruto : // Naruto can be replaced by any full anime name ( FULL NAME PLEASE ) 
 it takes exact name and gives one answer
 
 {
