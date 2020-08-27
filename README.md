@@ -15,11 +15,11 @@ this returns a list of every anime in the Database with other details which are 
     nameLink : 'link to place where you can see other detals about the anime',
     image : 'link to image',
     type : 'movie . tv series etc',
-	episodes : INT,
+    episodes : INT,
     rating : FLOAT (out of five) ,
     plot : 'summary'
     source : 'credits to original source'
-	year : INT,
+    year : INT,
     tags : "Action , Adventure , Dra… Manga , Domestic Abuse" // seperated by commas 
 }
 ```
