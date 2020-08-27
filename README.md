@@ -7,8 +7,8 @@ This update is done by a web scraper .
 There are two three paths defined in this 
 
 https://anime2211.herokuapp.com/anime/all : 
-```
 this returns a list of every anime in the Database with other details which are stored there  in Json Format
+```
 {
     name : 'somename',
     altName : 'name in alternate language',
