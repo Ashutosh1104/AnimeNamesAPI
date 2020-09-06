@@ -14,17 +14,18 @@ this returns a list of paginated anime in the Database with other details which 
     nameLink : 'link to place where you can see other detals about the anime',
     image : 'link to image',
     type : 'movie . tv series etc',
-	episodes : INT,
+    episodes : INT,
     rating : FLOAT (out of five) ,
     plot : 'summary'
     source : 'credits to original source'
-	year : INT,
+    year : INT,
     tags : "Action , Adventure , Dra… Manga , Domestic Abuse" // seperated by commas 
 }
+```
 
-https://anime2211.herokuapp.com/anime/GeneralSearch/naruto : // Naruto can be replaced by any full anime name ( FULL NAME PLEASE ) 
+https://anime2211.herokuapp.com/anime/GeneralSearch/naruto : // Naruto can be replaced by any word 
 it gives all the anime whose names or laternative names contain the passed variable == string 
-
+```
 [
     {
         name : 'somename',
@@ -40,16 +41,17 @@ it gives all the anime whose names or laternative names contain the passed varia
     .
     .   
 ]
+```
 
 https://anime2211.herokuapp.com/anime/SpecificSearch/naruto : // Naruto can be replaced by any full anime name ( FULL NAME PLEASE) 
 it takes exact name and gives one answer
-
+```
 {
     name : 'somename',
     altName : 'name in alternate language',
     nameLink : 'link to place where you can see other detals about the anime',
 }
-
+```
 //NOTE
 
 Due to some space issues i have only mainted those anime which have a rating of over 2.1 chnage that after forking to get every name of the anime ever.
