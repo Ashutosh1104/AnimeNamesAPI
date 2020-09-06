@@ -9,7 +9,11 @@ runDBupdate();
 setInterval( runDBupdate , 48*60*60*1000) // running update every 24 hrs
 
 app.get("/" , function(req,res){
-    res.send('plz read instructions onusing the api here :  https://github.com/Ashutosh1104/AnimeNamesAPI/blob/master/README.md ');
+    const result = { 
+        Message : "Please read instructions on Github" ,
+        Github : 'https://github.com/Ashutosh1104/AnimeNamesAPI/blob/master/README.md'
+    }
+    res.send(result);
 })
 
 app.use('/anime', require('./routes/anime'));

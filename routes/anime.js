@@ -5,11 +5,10 @@ const Anime = require('../models/anime');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-// Get Anime list
-router.get('/all', (req, res) => 
-  Anime.findAll()
-    .then(animes => res.send(animes))
-    .catch(err => console.log(err) ));
+// Get Anime list //   http://localhost:8000/anime?page=1&limit=15
+router.get('', paginatedResults(Anime), (req, res) => {
+  res.json(res.paginatedResults)
+})
 
 // Search for Animes
 router.get('/GeneralSearch/:name', (req, res) => {
@@ -31,7 +30,6 @@ router.get('/GeneralSearch/:name', (req, res) => {
     console.log(err)
     res.send('plz write name in better method')
   });
-  // Anime.findAll({ where: { name : { [Op.like]: '%' + term + '%' } } })
 });
 
 router.get('/SpecificSearch/:name', (req, res) => {
@@ -54,7 +52,49 @@ router.get('/SpecificSearch/:name', (req, res) => {
     console.log(err)
     res.send('plz write full name')
   });
-  // Anime.findAll({ where: { name : { [Op.like]: '%' + term + '%' } } })
 });
+
+
+// generalize the pagination so that it can be used with any model 
+
+function paginatedResults(model) {
+  return async (req, res, next) => {
+    const page = parseInt(req.query.page)
+    const limit = parseInt(req.query.limit)
+
+    const startIndex = (page - 1) * limit
+    const endIndex = page * limit
+
+    const results = {}
+
+    if ( endIndex < await model.count()) {
+      results.next = {
+        page: page + 1,
+        limit: limit
+      }
+    }
+    
+    if ( startIndex > 0) {
+      results.previous = {
+        page: page - 1,
+        limit: limit
+      }
+    }
+    try {
+      results.results = await Anime.findAll({
+        offset : startIndex ,
+        limit : limit ,
+        order: [
+          ['rating', 'DESC'],
+          ['episodes', 'DESC'],
+        ]
+      })
+      res.paginatedResults = results
+      next()
+    } catch (e) {
+      res.status(500).json({ message: e.message })
+    }
+  }
+}
 
 module.exports = router;
