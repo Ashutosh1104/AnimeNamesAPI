@@ -21,7 +21,6 @@ this returns a list of paginated anime in the Database with other details which 
     year : INT,
     tags : "Action , Adventure , Dra… Manga , Domestic Abuse" // seperated by commas 
 }
-```
 
 https://anime2211.herokuapp.com/anime/GeneralSearch/naruto : // Naruto can be replaced by any word 
 it gives all the anime whose names or laternative names contain the passed variable == string 
