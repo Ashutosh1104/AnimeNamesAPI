@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 const PORT = process.env.PORT || 8000;
 
 runDBupdate();
-setInterval(runDBupdate, 48 * 60 * 60 * 1000) // running update every 24 hrs
+setInterval(runDBupdate, 48 * 60 * 60 * 1000) // running update every 48 hrs
 
 app.get("/", function (req, res) {
     const result = {
